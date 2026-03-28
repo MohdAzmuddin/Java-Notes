@@ -1,0 +1,31 @@
+👉 **`this` means “this current object”**
+
+### 🔹 Simple Example
+class Student {
+    String name;
+
+    Student(String name) {
+        this.name = name;
+    }
+}
+```
+
+👉 Here:
+
+* `this.name` = **current object's name**
+* It tells Java: “use the variable of this object”
+
+---
+
+### 🔹 Why we use `this`?
+
+Because sometimes names are same:
+
+```java
+Student(String name) {
+    this.name = name;
+}
+```
+
+👉 Left side → object variable
+👉 Right side → value coming in
