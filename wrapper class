@@ -1,0 +1,89 @@
+In Java, a **Wrapper Class** is a class that converts a **primitive data type into an object**.
+
+---
+
+## 🔹 Simple Definition (Exam Ready)
+
+👉 **A wrapper class is used to wrap (convert) primitive data types into objects.**
+
+---
+
+## 🔹 Why Wrapper Classes Are Needed?
+
+Java is **object-oriented**, but primitive types (like `int`, `char`) are **not objects**.
+
+So, wrapper classes help when:
+
+* You need to use data in **collections** (like ArrayList)
+* You need **objects instead of primitives**
+* You want to use **utility methods** (like parsing, conversion)
+
+---
+
+## 🔹 Primitive → Wrapper Class Mapping
+
+| Primitive | Wrapper Class |
+| --------- | ------------- |
+| int       | Integer       |
+| float     | Float         |
+| double    | Double        |
+| char      | Character     |
+| boolean   | Boolean       |
+| byte      | Byte          |
+| short     | Short         |
+| long      | Long          |
+
+---
+
+## 🔹 Example
+
+```java
+int a = 10;              // primitive
+Integer obj = a;         // autoboxing (primitive → object)
+
+int b = obj;             // unboxing (object → primitive)
+```
+
+---
+
+## 🔹 Types of Conversion
+
+### 1. **Autoboxing**
+
+👉 Automatic conversion of primitive → object
+
+```java
+Integer num = 5;
+```
+
+### 2. **Unboxing**
+
+👉 Object → primitive
+
+```java
+int x = num;
+```
+
+---
+
+## 🔹 Useful Methods
+
+```java
+Integer.parseInt("123");   // String → int
+Integer.toString(10);      // int → String
+```
+
+---
+
+## 🔹 Real-Life Example
+
+👉 Think of primitive as **raw data (like milk)**
+👉 Wrapper class is **packed milk (object)** → easier to store, transport, use
+
+
+## 🔹 Important Points
+
+✔ Wrapper classes are in `java.lang` package
+✔ They are **immutable** (cannot change value once created)
+✔ Required for **Collections (ArrayList, HashMap, etc.)**
+
