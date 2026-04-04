@@ -1,0 +1,96 @@
+In Java, **call by value** and **call by reference** are common concepts—but here’s the important truth:
+
+👉 **Java is always call by value** (no true call by reference).
+
+Let’s understand both in simple terms 👇
+
+---
+
+# 🔹 1. Call by Value (Java uses this)
+
+In call by value, **a copy of the variable is passed** to the function.
+
+### 📌 Example (Primitive type)
+
+```java
+class Test {
+    static void change(int x) {
+        x = 50;
+    }
+
+    public static void main(String[] args) {
+        int a = 10;
+        change(a);
+        System.out.println(a); // Output: 10
+    }
+}
+```
+
+### ✅ Explanation:
+
+* `a = 10`
+* Copy of `a` is passed → `x`
+* `x` changes to 50, but **original `a` remains 10**
+
+👉 So, **original value does NOT change**
+
+---
+
+# 🔹 2. Call by Reference (Concept only, not real in Java)
+
+In call by reference, **original variable memory address is passed**, so changes affect the original.
+
+👉 Languages like C++ support this.
+
+---
+
+# 🔹 But what about Objects in Java? 🤔
+
+This is where confusion happens!
+
+### 📌 Example (Object)
+
+```java
+class Student {
+    int marks = 50;
+}
+
+class Test {
+    static void change(Student s) {
+        s.marks = 100;
+    }
+
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        change(s1);
+        System.out.println(s1.marks); // Output: 100
+    }
+}
+```
+
+### ✅ Explanation:
+
+* Object reference is passed **by value (copy of reference)**
+* Both point to same object in memory
+* So changes reflect in original object
+
+👉 Looks like reference, but actually it's **copy of reference**
+
+---
+
+# 🔥 Final Difference (Easy Table)
+
+| Feature                  | Call by Value | Call by Reference |
+| ------------------------ | ------------- | ----------------- |
+| What is passed           | Copy of value | Memory address    |
+| Change affects original? | ❌ No          | ✅ Yes             |
+| Java supports?           | ✅ Yes         | ❌ No              |
+
+---
+
+# 🎯 Final Conclusion
+
+* Java is **100% Call by Value**
+* For primitives → value is copied
+* For objects → reference is copied (not actual object)
+
