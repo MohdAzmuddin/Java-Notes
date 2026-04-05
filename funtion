@@ -1,0 +1,146 @@
+In **Java**, functions are called **methods**. There are several types based on parameters and return values.
+
+---
+
+## 🔹 1. Based on Parameters & Return Type
+
+### ✅ (a) No Parameters, No Return Value
+
+* Takes nothing, returns nothing
+
+```java
+void greet() {
+    System.out.println("Hello");
+}
+```
+
+---
+
+### ✅ (b) No Parameters, With Return Value
+
+* Takes nothing, but returns something
+
+```java
+int getNumber() {
+    return 10;
+}
+```
+
+---
+
+### ✅ (c) With Parameters, No Return Value
+
+* Takes input, but returns nothing
+
+```java
+void add(int a, int b) {
+    System.out.println(a + b);
+}
+```
+
+---
+
+### ✅ (d) With Parameters, With Return Value
+
+* Takes input and returns result
+
+```java
+int add(int a, int b) {
+    return a + b;
+}
+```
+
+---
+
+## 🔹 2. Based on Behavior
+
+### ✅ (a) Static Method
+
+* Belongs to class (no object needed)
+
+```java
+static void show() {
+    System.out.println("Static method");
+}
+```
+
+---
+
+### ✅ (b) Instance Method
+
+* Requires object to call
+
+```java
+void display() {
+    System.out.println("Instance method");
+}
+```
+
+---
+
+### ✅ (c) Constructor (Special Method)
+
+* Used to initialize object
+
+```java
+class Test {
+    Test() {
+        System.out.println("Constructor called");
+    }
+}
+```
+
+---
+
+### ✅ (d) Abstract Method
+
+* Declared but not defined (used in abstract class/interface)
+
+```java
+abstract void run();
+```
+
+---
+
+### ✅ (e) Final Method
+
+* Cannot be overridden
+
+```java
+final void show() {
+    System.out.println("Final method");
+}
+```
+
+---
+
+## 🔹 3. Other Important Types
+
+### ✅ Method Overloading
+
+* Same method name, different parameters
+
+```java
+int add(int a, int b) { return a + b; }
+int add(int a, int b, int c) { return a + b + c; }
+```
+
+---
+
+### ✅ Method Overriding
+
+* Redefining parent class method in child class
+
+---
+
+## 🔥 Summary (Easy Way)
+
+| Type                     | Meaning               |
+| ------------------------ | --------------------- |
+| No parameter / No return | Simple print          |
+| No parameter / Return    | Gives output          |
+| Parameter / No return    | Takes input           |
+| Parameter / Return       | Best (input + output) |
+| Static                   | Class level           |
+| Instance                 | Object level          |
+
