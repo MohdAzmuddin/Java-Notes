@@ -1,2 +1,35 @@
 In Java, a String is an object that represents a sequence of characters.
-Unlike primitive types (like int or char), String is a <b>class</>b in the java.lang package, and it is arguably the most used class in the entire language.
+Unlike primitive types (like int or char), String is a class in the java.lang package
+
+#important 
+String const pool(SCP) ---asks in interview
+The String Constant Pool (SCP) is a extra space allocated in Heap Memory where no duplicate string create only unique string created.
+
+## 1. How It Works (Internally)
+When you create a String using double quotes (a literal), the JVM performs a "lookup" in the pool:
+
+1. **Check the Pool:** The JVM checks if a string with the same value already exists in the SCP.
+2. **Reuse Reference:** If it exists, the JVM returns a reference to that existing object. No new memory is allocated.
+3. **Create New:** If it does not exist, a new string object is created in the pool, and its reference is returned.
+
+---
+
+## 2. Literal vs. `new` Keyword
+The way you declare a string determines whether the pool is used effectively:
+### String Literals 
+String s1 = "Java";
+String s2 = "Java";
+```.
+* **Memory:** Both `s1` and `s2` point to the **exact same object** in the SCP. 
+* **Comparison:** `s1 == s2` returns `true` because they share the same memory address.
+
+### The `new` Keyword
+```java
+String s3 = new String("Java");
+```
+* **Memory:** This forces the JVM to create a **new object** in the regular Heap memory, even if "Java" is already in the pool.
+* **Comparison:** `s1 == s3` returns `false` because one is in the SCP and the other is in the general Heap.
+
+
+
+Does this help clarify why Java handles strings differently than other objects, or would you like to see a code example of how this affects performance in large loops?
