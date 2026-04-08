@@ -1,0 +1,20 @@
+
+| Feature               | Compiler                                         | Interpreter                         |
+| --------------------- | ------------------------------------------------ | ----------------------------------- |
+| **Definition**        | Converts whole program into machine code at once | Converts and runs code line by line |
+| **Execution**         | After compilation, program runs directly         | Executes immediately line-by-line   |
+| **Speed**             | Faster (after compilation) 🚀                    | Slower (checks each line) 🐢        |
+| **Error Checking**    | Shows all errors after compilation               | Shows errors one by one             |
+| **Output**            | Generates an executable file (.exe)              | No separate file generated          |
+| **Example Languages** | C, C++                                           | Python, JavaScript                  ो
+
+### 🧠 Compiler
+
+* पूरा code पहले compile होता है
+* अगर 10 errors हैं → सब एक साथ दिखेंगे
+* फिर program run होगा
+
+### 🧠 Interpreter
+
+* Code line by line चलता है
+* जहाँ error आएगा → वहीं रुक जाएगा
