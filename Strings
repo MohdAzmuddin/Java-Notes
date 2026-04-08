@@ -1,1 +1,2 @@
-
+In Java, a String is an object that represents a sequence of characters.
+Unlike primitive types (like int or char), String is a <b>class</>b in the java.lang package, and it is arguably the most used class in the entire language.
