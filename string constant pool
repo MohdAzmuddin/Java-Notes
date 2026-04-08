@@ -1,0 +1,96 @@
+The **String Constant Pool (SCP)** in **Java** is a special memory area inside the heap where Java stores **string literals** to optimize memory usage and improve performance.
+
+---
+
+## 🔹 What is String Constant Pool?
+
+It is a **separate part of heap memory** where **unique string values** are stored only once.
+
+👉 If multiple variables have the same string literal, they will **refer to the same object** in the pool.
+
+---
+
+## 🔹 Example
+
+```java
+String s1 = "Hello";
+String s2 = "Hello";
+```
+
+👉 Here:
+
+* Only **one "Hello" object** is created in the String Pool
+* Both `s1` and `s2` point to the **same memory location**
+
+---
+
+## 🔹 How it Works
+
+```java
+String s1 = "Hello";              // stored in SCP
+String s2 = new String("Hello"); // new object in heap (outside SCP)
+```
+
+👉 Explanation:
+
+* `"Hello"` → goes into **String Constant Pool**
+* `new String("Hello")` → creates a **new object in heap**, even if same value exists
+
+---
+
+## 🔹 Diagram (Conceptual)
+
+```
+String Pool:
+   "Hello"  ← s1, s2
+
+Heap:
+   new String("Hello") ← separate object
+```
+
+---
+
+## 🔹 Why String Pool is Used
+
+1. ✅ **Memory optimization** (no duplicate strings)
+2. ✅ **Faster comparison** using `==` (same reference)
+3. ✅ Efficient for frequently used strings
+
+---
+
+## 🔹 equals() vs ==
+
+```java
+String s1 = "Hello";
+String s2 = "Hello";
+String s3 = new String("Hello");
+
+System.out.println(s1 == s2);      // true (same reference)
+System.out.println(s1 == s3);      // false (different object)
+System.out.println(s1.equals(s3)); // true (same value)
+```
+
+---
+
+## 🔹 intern() Method
+
+```java
+String s1 = new String("Hello");
+String s2 = s1.intern();
+```
+
+👉 `intern()`:
+
+* Moves string to **String Pool**
+* Returns reference from pool
+
+---
+
+## 🔹 Key Points (Important for Exams 💯)
+
+* String pool stores **only one copy** of each literal
+* Located in **heap memory**
+* `==` checks **reference**, `.equals()` checks **value**
+* `new String()` always creates **new object**
+* `intern()` forces string into pool
+
