@@ -1,0 +1,131 @@
+# ✅ 1. Checked vs Unchecked Exception (Java)
+
+## 🔹 Checked Exceptions
+
+* Checked at **compile-time**
+* Must be handled using `try-catch` OR `throws`
+* Occur due to **external issues**
+### Examples:
+* `IOException`
+* `SQLException`
+* `FileNotFoundException`
+---
+## 🔹 Unchecked Exceptions
+* Occur at **runtime**
+* Not mandatory to handle
+* Caused by **programming mistakes**
+
+### Examples:
+
+* `NullPointerException`
+* `ArithmeticException`
+* `ArrayIndexOutOfBoundsException`
+
+### Example:
+
+```java
+class Test {
+    public static void main(String[] args) {
+        int a = 10 / 0; // ArithmeticException
+    }
+}
+## 🔥 Key Difference
+
+| Feature  | Checked      | Unchecked      |
+| -------- | ------------ | -------------- |
+| Time     | Compile-time | Runtime        |
+| Handling | Mandatory    | Optional       |
+| Cause    | External     | Logical errors |
+
+---
+
+# ✅ 2. `==` vs `.equals()` in Java
+
+## 🔹 `==` (Comparison Operator)
+
+* Compares **memory address (reference)** for objects
+* Compares **value** for primitives
+
+### Example:
+
+```java
+String a = new String("hello");
+String b = new String("hello");
+
+System.out.println(a == b); // false
+```
+
+---
+
+## 🔹 `.equals()` (Method)
+
+* Compares **actual content/value**
+
+### Example:
+
+```java
+System.out.println(a.equals(b)); // true
+```
+
+---
+
+## 🔥 Key Difference
+
+| Feature          | `==`               | `.equals()`    |
+| ---------------- | ------------------ | -------------- |
+| Compares         | Reference          | Value          |
+| Used for         | Primitive + Object | Object content |
+| Output (Strings) | false              | true           |
+
+---
+
+# ✅ 3. Array vs ArrayList in Java
+
+## 🔹 Array
+
+* Fixed size
+* Can store **primitive + objects**
+* Faster
+
+### Example:
+
+```java
+int[] arr = new int[5];
+arr[0] = 10;
+```
+## 🔹 ArrayList (from Java Collections Framework)
+
+* Dynamic size (can grow/shrink)
+* Stores **objects only**
+* Slower than array (slightly)
+
+### Example:
+
+```java
+import java.util.*;
+
+ArrayList<Integer> list = new ArrayList<>();
+list.add(10);
+```
+
+---
+
+## 🔥 Key Difference
+
+| Feature     | Array               | ArrayList                          |
+| ----------- | ------------------- | ---------------------------------- |
+| Size        | Fixed               | Dynamic                            |
+| Data type   | Primitive + Object  | Only Objects                       |
+| Performance | Faster              | Slightly slower                    |
+| Methods     | No built-in methods | Many methods (`add()`, `remove()`) |
+
+---
+
+# 💡 Quick Summary (Exam Ready)
+
+* **Checked Exception** → Compile-time, must handle
+* **Unchecked Exception** → Runtime, optional handling
+* **`==`** → compares reference
+* **`.equals()`** → compares value
+* **Array** → fixed size, faster
+* **ArrayList** → dynamic, flexible
