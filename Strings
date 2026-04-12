@@ -148,6 +148,38 @@ System.out.println(sb);  // Hello World
 * Methods are **synchronized(Only one thread can access a resource at a time)
 * Safe when multiple threads access the same object
 
+# String concatenation
+  string + int = string  // "az"+64  = az64
+  string +string = string // "az" + "km" = azkm
+  int + string = string   // 64 + "az" = 64az
+
+# String Formatting 
+  String formatting is used to insert values into a string using format specifiers like `%s`, `%d`, et
+
+ ✅ Example
+String name = "Azmuddin";
+int age = 23;
+String result = String.format("My name is %s and I am %d years old", name, age);
+System.out.println(result);  //My name is Azmuddin and I am 23 years old
+
+## 🔹 Common Format Specifiers
+
+| Specifier | Meaning      |
+| --------- | ------------ |
+| `%s`      | String       |
+| `%d`      | Integer      |
+| `%f`      | Float/Double |
+| `%c`      | Character    |
+| `%b`      | Boolean      |
+
+double price = 99.45678;
+System.out.println(String.format("Price: %.2f", price));  //99.46
+
+## 🔹 2. `System.out.printf()`
+
+👉 Works same as `String.format()` but prints directly
+System.out.printf("Value: %d", 10);
+    
 
    
    
