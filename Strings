@@ -1,4 +1,4 @@
-In Java, a String is an object that represents a sequence of characters.
+In Java, a String is an object that represents a sequence of characters. it is immutable(means value cant change)
 Unlike primitive types (like int or char), String is a class in the java.lang package
 
 #important 
@@ -104,6 +104,53 @@ s.substring(0,2)  // ab (c not include because end is exclude )
 eg s = "abc"
   then subSequence =  a, b , c, ac, abc,
                 cb, ca, ba  invalid /// order matter 
+
+
+----- Q). given two mail find their company name
+    String mail1 = "azmuddin@gmail.com";
+    String mail2 = "alluarjun@hotmail.com";
+/// first we split where @ then find '.' index
+
+  ---    String m1[] = mail1.split("@");
+        String m2[] = mail2.split("@");
+        
+        String s1 = m1[m1.length-1];//gmail.com
+        String s2 = m2[m2.length-1];///hotmail.com
+        
+        System.out.println(s1.substring(0,s1.lastIndexOf('.')));// gmail
+        System.out.println(s2.substring(0,s2.lastIndexOf('.'))); //hotmail
+
+
+# StringBuilder vs StringBuffer
+  Both are used to create mutable strings (i.e., strings that can be changed).
+
+| Feature         | `StringBuilder`          | `StringBuffer`          |
+| --------------- | ------------------------ | ----------------------- |
+| Thread Safety   | ❌ Not thread-safe        | ✅ Thread-safe           |
+| Performance     | 🚀 Faster                | 🐢 Slower               |
+| Synchronization | ❌ No                     | ✅ Yes                   |
+| Introduced In   | Java 5                   | Java 1.0                |
+| Use Case        | Single-threaded programs | Multi-threaded programs |
+
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+System.out.println(sb);  //   Hello World 
+---
+StringBuffer sb = new StringBuffer("Hello");
+sb.append(" World");
+System.out.println(sb);  // Hello World
+
+## 🔹 Why `StringBuilder` is Faster?
+* No synchronization (no thread locking)
+* Less overhead → better performance
+
+## 🔹 Why `StringBuffer` is Safer?
+* Methods are **synchronized**
+* Safe when multiple threads access the same object
+
+
+   
+   
 
 
 
