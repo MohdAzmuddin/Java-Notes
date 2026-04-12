@@ -176,8 +176,7 @@ double price = 99.45678;
 System.out.println(String.format("Price: %.2f", price));  //99.46
 
 ## 🔹 2. `System.out.printf()`
-
-👉 Works same as `String.format()` but prints directly
+ Works same as `String.format()` but prints directly
 System.out.printf("Value: %d", 10);
     
 
