@@ -66,4 +66,75 @@ System.out.println(s1 == s3);      // false (s3 is a brand new object elsewhere)
 
 // Case 3: Comparing the actual text
 System.out.println(s1.equals(s3)); // true (The text "Hello" is identical)
+-----
+#String function
+
+  -- s.toLowerCase() /// nothing change on original data 
+  -- s.toUpperCase()
+  -- s.charAt(0)
+  -- s.indexOf('A')
+  -- s.lastIndexOf('A')
+  -- s.toCharArray()  /// convert string into char array   char[] arr = str.toCharArray();
+  --s.trim()   /// remove space
+  --s.startsWith('a') 
+  --s.endsWith('a') 
+  -- s.compareTo()   /// compare two strings lexicographically (dictionary order)
+        Returns 0 → if both strings are equal
+        Returns positive value → if s1 > s2
+        Returns negative value → if s1 < s2
+        String s1 = "apple";
+        String s2 = "banana";
+          System.out.println(s1.compareTo(s2)); /// negative
+
+| Method        | Purpose                     |
+| ------------- | --------------------------- |
+| `equals()`    | checks **content equality** |
+| `compareTo()` | checks **order (sorting)**  |
+
+# SubString   
+--substring is a method which used to exract part of string but order matter,continuity matter
+eg s = "abc"
+  then substring =  a, ab, abc,b, bc, c
+s.substring(2) //c
+s.substring(0)  // abc
+s.substring(0,2)  // ab (c not include because end is exclude )
+ 
+# Subsequence    
+--subsequence is a method which used to exract part of string but it return charSequence order matter,  not continuity matter
+eg s = "abc"
+  then subSequence =  a, b , c, ac, abc,
+                cb, ca, ba  invalid /// order matter 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
