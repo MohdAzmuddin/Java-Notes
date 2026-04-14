@@ -1,1 +1,56 @@
+----  # Constructor
+* It is called automatically when you create an object.
+* It has the same name as the class.
+* It does not have a return type (not even `void`).
 
+class Student {
+    String name;
+    // Constructor
+    Student() { name = "Azmuddin";}
+    void display() { System.out.println(name);  }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student(); // constructor called
+        s1.display(); /// Azmuddin
+    }
+}
+## 🔹 Types of Constructors
+### 1. Default Constructor
+
+* Provided by Java if you don’t write any constructor.
+class Test {
+    Test() {
+        System.out.println("Default Constructor");
+    }
+}
+### 2. Parameterized Constructor
+* Takes arguments to initialize values.
+class Student {
+    String name;
+    Student(String n) {
+        name = n;
+    }
+}
+Student s1 = new Student("Azmuddin");
+
+### 3. Copy Constructor (not built-in, but created manually)
+
+class Student {
+    String name;
+    Student(String n) {
+        name = n;
+    }
+    Student(Student s) {
+        name = s.name;
+    }
+}
+## 🔹 Special Keyword: `this`
+Used to refer to the current object.
+class Student {
+    String name;
+    Student(String name) {
+        this.name = name; // distinguishes variable
+    }
+}
