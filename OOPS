@@ -221,21 +221,6 @@ class C extends A, B {} // ❌ not allowed
 
 👉 But possible using **interfaces**
 
-🔸 `super` keyword  =   Used to refer parent class
-
-class Animal {
-    Animal() {
-        System.out.println("Animal constructor");
-    }
-}
-
-class Dog extends Animal {
-    Dog() {
-        super(); // calls parent constructor
-        System.out.println("Dog constructor");
-    }
-}
-
 ## 🔹 Real-Life Example
 * **Animal → Dog, Cat**
 * **Vehicle → Car, Bike**
