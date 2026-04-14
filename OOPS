@@ -136,3 +136,53 @@ Main method
 | Runs when      | Class loaded    | When called       | When class loads |
 | Use            | Shared data     | Utility functions | Initialization   |
 
+----# Encapsulation
+Encapsulation means wrapping data (variables) and code (methods) into a single unit (class) and restricting direct access to that data.
+👉 In simple words:
+**“Data hiding + controlled access”**
+
+## 🔸 Why use Encapsulation?
+* Protects data from unauthorized access 🔒
+* Improves security
+
+class Student {
+    private String name; // private variable
+    // Setter method
+    public void setName(String name) {
+        this.name = name;
+    }
+    // Getter method
+    public String getName() {
+        return name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student();
+
+        s.setName("Azmuddin"); // setting value
+        System.out.println(s.getName()); // getting value
+    }
+}
+## 🔹 Real-Life Example
+Think of a **bank account** 🏦
+* Balance = private (hidden)
+* Deposit/Withdraw = public methods
+You can’t directly change balance, only through methods.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
