@@ -171,6 +171,75 @@ Think of a **bank account** 🏦
 * Deposit/Withdraw = public methods
 You can’t directly change balance, only through methods.
 
+--- # Inheritance
+Inheritance is a concept where one class acquires properties (variables) and behaviors (methods) of another class.
+👉 In simple words:
+**“One class uses features of another class”**
+
+class Animal {
+    void eat() {
+        System.out.println("Eating...");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.eat();  // inherited method
+        d.bark(); // own method
+    }
+}
+🔹 Types of Inheritance in Java
+1. Single Inheritance
+One parent → one child
+class A {}
+class B extends A {}
+
+ 2. Multilevel Inheritance
+Chain inheritance
+class A {}
+class B extends A {}
+class C extends B {}
+
+3. Hierarchical Inheritance
+One parent → multiple children
+class A {}
+class B extends A {}
+class C extends A {}
+
+❌ Multiple Inheritance (Not supported with classes)  /// also called diamond problem --- ask in interview
+
+class A {}
+class B {}
+class C extends A, B {} // ❌ not allowed
+
+👉 But possible using **interfaces**
+
+🔸 `super` keyword  =   Used to refer parent class
+
+class Animal {
+    Animal() {
+        System.out.println("Animal constructor");
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        super(); // calls parent constructor
+        System.out.println("Dog constructor");
+    }
+}
+
+## 🔹 Real-Life Example
+* **Animal → Dog, Cat**
+* **Vehicle → Car, Bike**
+
 
 
 
