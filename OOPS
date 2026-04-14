@@ -54,3 +54,85 @@ class Student {
         this.name = name; // distinguishes variable
     }
 }
+
+---  # Static variable, method, block
+the keyword **`static`** means something belongs to the **class**, not to individual object
+
+ 1. Static Variable (Class Variable)
+A variable declared with `static` is **shared among all objects** of the class.
+
+## 🔸 Key Points
+* Only **one copy** exists (not per object)
+* Memory is allocated **once in class area**
+* Access using class name
+
+class Student {
+    static String college = "BVICAM"; // static variable
+    String name;
+    Student(String name) {
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println(name + " " + college);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student("Azmuddin");
+        Student s2 = new Student("Ali");
+
+        s1.display();   /// Azmuddin BVICAM
+        s2.display();   //// Ali BVICAM
+    }
+}
+✔ Both objects share the same `college`
+
+# 🔹 2. Static Method
+A method declared with `static` can be called **without creating an object**.
+
+## 🔸 Key Points
+* Called using class name
+* Can only directly access **static variables/methods**
+* Cannot use `this` or `super`
+class Demo {
+    static void show() {
+        System.out.println("Static method called");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Demo.show(); // no object needed
+    }
+}
+
+# 🔹 3. Static Block
+A block of code that runs **once when the class is loaded** (before `main()`).
+
+## 🔸 Key Points
+* Used for **initialization**
+* Executes only once
+* Runs before constructor and main method
+class Test {
+    static {
+        System.out.println("Static block executed");
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Main method");
+    }
+}
+👉 Output:
+Static block executed
+Main method
+# 🔥 Quick Comparison
+
+| Feature        | Static Variable | Static Method     | Static Block     |
+| -------------- | --------------- | ----------------- | ---------------- |
+| Belongs to     | Class           | Class             | Class            |
+| Object needed? | ❌ No            | ❌ No              | ❌ No             |
+| Runs when      | Class loaded    | When called       | When class loads |
+| Use            | Shared data     | Utility functions | Initialization   |
+
