@@ -1,1 +1,14 @@
+---  Time Complexity is the rate at which execution time increase with input size
+---  Space Complexity  = input + Auxiliary Space (it is extra memory used by algo)
+--- Rule for Analyze TC
+    1. Always analyze worst-case scenario.
+    2. Ignore constants (e.g., O(2n) → O(n)).
+    3. Drop low-order terms (e.g., O(n² + n) → O(n²)).
+    4. In general, OuterLoop × InnerLoop = Total Complexity
+    5. If input is divided, use logs:
+       * Divided by 2 → log base 2 → O(log₂ n)
+       * Divided by 3 → log base 3 → O(log₃ n)
+    6. Function calls: Analyze each function's complexity individually and include them where they're called.
+    7. Conditions and branches (if/else): Consider the branch with higher complexity for worst-case.
+    8. Loops depending on input values (e.g., while(i < n) with i *= 2) → Usually log-based complexities.
 
