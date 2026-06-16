@@ -1,0 +1,85 @@
+#  Collection Framework is a group of classes and interfaces used to store and manage multiple data items
+| Class                              | Interface                                                   |
+| ---------------------------------- | ----------------------------------------------------------- |
+| Class is used to create objects.   | Interface is used to define rules that a class must follow. |
+| Can have variables and methods.    | Can have method declarations.                               |
+| Can create objects from a class.   | Cannot create objects from an interface.                    |
+| A class can extend only one class. | A class can implement multiple interfaces.                  |
+### Example
+#### Interface
+```java
+interface Animal {
+    void sound();
+}```
+#### Class
+```java
+class Dog implements Animal {
+    public void sound() {
+        System.out.println("Bark");
+    }
+}
+### Real-Life Example      * **Interface** = Rules of a game.   * **Class** = A player who follows those rules.
+
+Iterable
+   |
+Collection (Interface)
+   |
+   +---- List
+   |       |
+   |       +---- ArrayList
+   |       +---- LinkedList
+   |       +---- Vector
+   |               |
+   |               +---- Stack
+   |
+   +---- Set
+   |       |
+   |       +---- HashSet
+   |       +---- LinkedHashSet
+   |       +---- TreeSet
+   |
+   +---- Queue
+           |
+           +---- PriorityQueue
+           +---- Deque
+                    |
+                    +---- ArrayDeque
+
+Map (Separate Interface)
+   |
+   +---- HashMap
+   +---- LinkedHashMap
+   +---- TreeMap
+   +---- Hashtable
+
+1). List 
+  -- A List stores elements in order.
+Features
+--Duplicates allowed
+--Maintains insertion order
+--Index available
+1a). ArrayList
+   -- Uses a dynamic array.    ---Fast data access    ---Easy to use
+ArrayList<Integer> list = new ArrayList<>();
+list.add(10);
+list.add(20);
+System.out.println(list); //[10,20]
+
+Important Methods
+add() // add value     --get() // get element at particular index  --set() // set element at index set(0,2)  --remove()
+
+1b).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
