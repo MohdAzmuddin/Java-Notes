@@ -68,7 +68,39 @@ System.out.println(list); //[10,20]
 Important Methods
 add() // add value     --get() // get element at particular index  --set() // set element at index set(0,2)  --remove()
 
-1b).
+1b).LinkedList
+  --Linked List is a data structure where each element (node) stores:  1. Data  2. Address (reference) of the next node
+    10 -> 20 -> 30 -> null
+* Node 1 contains `10` and points to Node 2.
+* Node 2 contains `20` and points to Node 3.
+* Node 3 contains `30` and points to `null` (end).
+
+✅ Dynamic size (can grow or shrink)
+❌ Extra memory needed for storing references
+
+   LinkedList<Integer> list = new LinkedList<>();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        System.out.println(list);  //[10, 20, 30]
+
+### Difference Between ArrayList and LinkedList
+
+1. **ArrayList** internally uses a **dynamic array** to store elements.
+   **LinkedList** internally uses a **doubly linked list** to store elements.
+
+2. **ArrayList** insertion and deletion are slower because elements need to be shifted in memory.
+   **LinkedList** insertion and deletion are faster because no shifting is required.
+
+3. **ArrayList** is better for storing and accessing data.
+   **LinkedList** is better for frequent insertion and deletion of data.
+
+4. In **ArrayList**, elements are stored in **contiguous memory locations**.
+   In **LinkedList**, elements are stored in **non-contiguous memory locations**.
+
+5. **ArrayList** has a default initial capacity (10).
+   **LinkedList** does not have a default capacity; an empty list is created.
+
 
 
 
