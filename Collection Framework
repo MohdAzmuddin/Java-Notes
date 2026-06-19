@@ -257,12 +257,63 @@ TreeSet       -> Unique + Sorted
 | ------------------ | -------- | -------- | ----------------- | 
 | HashSet            | O(1)     | O(1)     | O(1)              |           
 | LinkedHashSet      | O(1)     | O(1)     | O(1)              |       
-| TreeSet            | O(log n) | O(log n) | O(log n)          |            
+| TreeSet            | O(log n) | O(log n) | O(log n)          |      
 
 
+# Map in Java Collection Framework
+   Map stores data in **Key-Value pairs**. 
+  --Each key must be unique.
+  --Values can be duplicated.
 
+Map<Integer, String> map = new HashMap<>();
+map.put(1, "Azmuddin");
+map.put(2, "Ali");
+map.put(3, "Azmuddin");
+System.out.println(map); //{1=Azmuddin, 2=Ali, 3=Azmuddin}
 
+# Types of Map
+## 1. HashMap
+* Keys are unique
+* No order maintained
 
+### TC
+* put() → O(1)
+* get() → O(1)
+* remove() → O(1)
+
+## 2. LinkedHashMap
+* Keys are unique
+* Maintains insertion order
+
+LinkedHashMap<Integer, String> map = new LinkedHashMap<>();
+{1=Java, 2=Python, 3=C++}
+
+## 3. TreeMap
+* Keys are unique
+* Keys stored in sorted order
+
+TreeMap<Integer, String> map = new TreeMap<>();
+{1=A, 2=B, 3=C}
+### TC
+* put() → O(log n)
+* get() → O(log n)
+* remove() → O(log n)
+
+# Common Methods
+### put()   //map.put(1, "Java");
+### get()   //System.out.println(map.get(1));
+### containsKey() //map.containsKey(1);
+### containsValue() //map.containsValue("Java");
+
+# Iterating Map
+
+for (Map.Entry<Integer, String> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + " " + entry.getValue());
+}
+ other way to print
+for(Integer key = map.keySet()){
+System.out.println(key+" "+map.get(key));
+}
 
 
 
