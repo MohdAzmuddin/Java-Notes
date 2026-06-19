@@ -101,8 +101,26 @@ add() // add value     --get() // get element at particular index  --set() // se
 5. **ArrayList** has a default initial capacity (10).
    **LinkedList** does not have a default capacity; an empty list is created.
 
+1c).Stack
+  -- Stack is a data structure that follows LIFO (Last In, First Out).
 
+        Stack<Integer> stack = new Stack<>();
+        stack.push(10);
+        stack.push(20);
+        stack.push(30)
+        System.out.println(stack);      // [10,20,30]
+        System.out.println(stack.peek()); // 30
+        System.out.println(stack.pop());  // 30
+        System.out.println(stack);        // [10,20]
 
+| Method    | Work                     |
+| --------- | ------------------------ |
+| push()    | Add element              |
+| pop()     | Remove top element       |
+| peek()    | View top element         |
+| isEmpty() | Check stack empty or not |
+
+# 2) Queue
 
 
 
