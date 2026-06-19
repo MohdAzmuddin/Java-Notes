@@ -200,6 +200,67 @@ Queue  -> One end insert, one end delete
 Stack  -> One end insert/delete
 Deque  -> Both ends insert/delete
 
+# Set in Java Collection Framework
+ *Set** is a collection that **does not allow duplicate elements**.
+--If you add the same value multiple times, it will be stored only once.
+
+Set<Integer> set = new HashSet<>();
+set.add(10);
+set.add(20);
+set.add(10);
+System.out.println(set);// [10, 20]
+for(Integer e:set){
+     System.out.print(e+" ");// 10 20
+ }
+    }
+
+# Types of Set
+
+## 1. HashSet
+* No duplicate values
+* No insertion order
+
+HashSet<Integer> set = new HashSet<>();
+set.add(30);
+set.add(10);
+set.add(20);
+System.out.println(set); //[20, 10, 30]
+
+## 2. LinkedHashSet
+* No duplicate values
+* Maintains insertion order
+
+LinkedHashSet<Integer> set = new LinkedHashSet<>();
+set.add(30);
+set.add(10);
+set.add(20);
+System.out.println(set); //[30, 10, 20]
+
+## 3. TreeSet
+* No duplicate values
+* Stores elements in sorted order
+
+TreeSet<Integer> set = new TreeSet<>();
+set.add(30);
+set.add(10);
+set.add(20);
+System.out.println(set); //[10, 20, 30]
+
+# Common Methods
+set.add(10); // Add element  set.remove(10)// Remove element   set.contains(10);// Check element  set.size(); // Number of elements   set.isEmpty();// Check empty
+
+### Quick Memory Trick
+HashSet       -> Unique + Unordered
+LinkedHashSet -> Unique + Insertion Order
+TreeSet       -> Unique + Sorted
+| Collection         | add()    | remove() | contains()/search | 
+| ------------------ | -------- | -------- | ----------------- | 
+| HashSet            | O(1)     | O(1)     | O(1)              |           
+| LinkedHashSet      | O(1)     | O(1)     | O(1)              |       
+| TreeSet            | O(log n) | O(log n) | O(log n)          |            
+
+
+
 
 
 
