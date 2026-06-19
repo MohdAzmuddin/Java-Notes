@@ -121,6 +121,149 @@ add() // add value     --get() // get element at particular index  --set() // se
 | isEmpty() | Check stack empty or not |
 
 # 2) Queue
+# Queue in Java Collection Framework
+
+A **Queue** is a data structure that follows **FIFO (First In, First Out)**.
+
+👉 The element added first is removed first.
+
+### Example
+
+```text
+Queue: [10, 20, 30]
+
+remove() → 10
+remove() → 20
+remove() → 30
+```
+
+Like a line at a ticket counter:
+
+* First person in line gets served first.
+
+---
+
+## Creating a Queue
+
+```java
+import java.util.*;
+
+Queue<Integer> q = new LinkedList<>();
+```
+
+---
+
+## Common Methods
+
+### add() - Insert Element
+
+```java
+q.add(10);
+q.add(20);
+q.add(30);
+```
+
+Output:
+
+```text
+[10, 20, 30]
+```
+
+---
+
+### remove() - Remove First Element
+
+```java
+q.remove();
+```
+
+Output:
+
+```text
+10
+```
+
+Queue becomes:
+
+```text
+[20, 30]
+```
+
+---
+
+### peek() - View First Element
+
+```java
+System.out.println(q.peek());
+```
+
+Output:
+
+```text
+20
+```
+
+---
+
+### isEmpty()
+
+```java
+System.out.println(q.isEmpty());
+```
+
+Output:
+
+```text
+false
+```
+
+---
+
+## Complete Example
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Queue<Integer> q = new LinkedList<>();
+
+        q.add(10);
+        q.add(20);
+        q.add(30);
+
+        System.out.println(q);        // [10, 20, 30]
+        System.out.println(q.peek()); // 10
+        System.out.println(q.remove()); // 10
+        System.out.println(q);        // [20, 30]
+    }
+}
+```
+
+---
+
+## Interview Points
+
+| Method    | Work                     |
+| --------- | ------------------------ |
+| add()     | Insert element           |
+| remove()  | Remove first element     |
+| peek()    | View first element       |
+| isEmpty() | Check queue empty or not |
+
+### Queue vs Stack
+
+| Queue              | Stack             |
+| ------------------ | ----------------- |
+| FIFO               | LIFO              |
+| First In First Out | Last In First Out |
+| add(), remove()    | push(), pop()     |
+
+### One-Line Interview Answer
+
+**Queue is a FIFO (First In First Out) data structure where the first inserted element is removed first.** 🚀
+
 
 
 
