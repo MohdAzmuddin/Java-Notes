@@ -169,6 +169,40 @@ System.out.println(pq.peek());//30
     ---tc = o(1) // peak()
 
 
+### Deque in Java Collection Framework
+ --- Deque stands for **Double Ended Queue**.
+ ---Elements can be added and removed from **both front and rear ends**.
+`
+      Deque<Integer> dq = new ArrayDeque<>();
+        dq.addFirst(10);
+        dq.addLast(20);
+        dq.addFirst(5);
+
+        System.out.println(dq);          // [5, 10, 20]
+        System.out.println(dq.peekFirst()); // 5
+        System.out.println(dq.peekLast());  // 20
+
+        dq.removeFirst();
+        System.out.println(dq);          // [10, 20]
+
+## Important Methods
+| Method        | Work               |
+| ------------- | ------------------ |
+| addFirst()    | Add at front       |                             
+| addLast()     | Add at rear        |
+| removeFirst() | Remove from front  |
+| removeLast()  | Remove from rear   |
+| peekFirst()   | View front element |
+| peekLast()    | View rear element  |
+
+### Quick Memory Trick
+Queue  -> One end insert, one end delete
+Stack  -> One end insert/delete
+Deque  -> Both ends insert/delete
+
+
+
+
 
 
 
