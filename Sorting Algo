@@ -78,5 +78,63 @@ class Main {
 | Average Case                | O(n²)      |
 | Worst Case (reverse sorted) | O(n²)      |
 
+
+###  2). Selection Sort
+ --Selection Sort finds the **smallest element** from the unsorted part of the array and places it at the correct position.
+
+### Memory Trick // **Find Minimum → Swap → Repeat**
+
+Array: [64, 25, 12, 22, 11]
+
+### Step 1
+Find the smallest element in:
+[64, 25, 12, 22, 11]
+
+Smallest = **11**
+Swap 64 and 11 //[11, 25, 12, 22, 64]
+Now first position is sorted.
+
+### Step 2
+Find the smallest element in: //[25, 12, 22, 64]
+
+Smallest = **12**
+Swap 25 and 12 //[11, 12, 25, 22, 64]
+
+### Step 3
+Find the smallest element in: [25, 22, 64]
+
+Smallest = **22**
+Swap 25 and 22 //[11, 12, 22, 25, 64]
+
+### Step 4
+Find the smallest element in: [25, 64]
+
+Smallest = **25**
+No swap needed. [11, 12, 22, 25, 64]  ✅ Sorted Array
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Start small. Ship something.");
+        int arr[] = {5,2,4,6,1,3};
+        for(int i=0;i<arr.length-1;i++){
+            int minIndex = i;
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[j]<arr[minIndex]){
+                    minIndex = j;
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
     }
 }
+# Time Complexity
+| Case    | Time  |
+| ------- | ----- |
+| Best    | O(n²) |
+| Average | O(n²) |
+| Worst   | O(n²) |
