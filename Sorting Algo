@@ -1,1 +1,32 @@
+## 1). Insertion Sort Algorithm 
+---Insertion Sort picks one element at a time and places it in its correct position in the already sorted part of the array.
 
+Algorithm
+-Start from the second element (i = 1).
+-Store the current element in key.
+-Compare key with elements before it.(WHICH IS ASSUME SORTED)
+-Shift larger elements one position to the right.
+-Insert key at its correct position.
+-Repeat until the array is sorted.
+
+class Main {
+    public static void main(String[] args) {
+        int arr[] = {5,2,4,6,1,3};
+        for(int i=1;i<arr.length;i++){
+            int key = arr[i];// current element
+            int j = i-1; // previous index
+            
+            // shift larger element to right side
+            while(j>=0 && arr[j]>key){
+                arr[j+1] = arr[j];
+                j--;
+            }
+            //place key at correct position
+            arr[j+1] = key;
+            
+        }
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" "); // [1,2,3,4,5,6]
+        }
+    }
+}
