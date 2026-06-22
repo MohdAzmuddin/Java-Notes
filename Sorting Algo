@@ -272,6 +272,33 @@ class Main {
 * Worst Case: **O(n + k)**
 (`n` = number of elements, `k` = largest element)
 
+# 6).  Radix Sort 
+--Radix Sort sorts numbers digit by digit, starting from the **ones place**, then **tens place**, then **hundreds place**, and so on.
+
+Array:  170 45 75 90 802 24 2 66
+
+After Ones Place:
+170 90 802 2 24 45 75 66
+
+After Tens Place:
+802 2 24 45 66 170 75 90
+
+After Hundreds Place:
+2 24 45 66 75 90 170 802
+
+* Sorts numbers digit by digit.
+* Does not compare elements directly.
+* Works for non-negative integers.
+
+### Complexity
+* **Time Complexity:** O(d × n)
+* **Space Complexity:** O(n)
+
+* `n` = number of elements
+* `d` = number of digits in the largest number
+
+
+
 
 
 
