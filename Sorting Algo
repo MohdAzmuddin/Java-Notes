@@ -138,3 +138,92 @@ class Main {
 | Best    | O(n²) |
 | Average | O(n²) |
 | Worst   | O(n²) |
+
+### 3).Bubble Sort 
+--Bubble Sort is a simple sorting algorithm that compares adjacent elements and swaps them if they are in the wrong order.
+
+### Working
+1. Compare two neighboring elements.
+2. If the first element is greater than the second, swap them.
+3. Repeat this process for the entire array.
+4. Continue passes until the array becomes sorted.
+
+Array: `5 3 8 4 2`
+
+Pass 1: `3 5 4 2 8`
+Pass 2: `3 4 2 5 8`
+Pass 3: `3 2 4 5 8`
+Pass 4: `2 3 4 5 8`
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Start small. Ship something.");
+        int arr[] = {3,2,1,5,4};
+        for(int i=0;i<arr.length-1;i++){
+                for(int j=0;j<arr.length-1-i;j++){
+                if(arr[j]>arr[j+1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;    
+                }
+            }
+        }
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+
+### Time Complexity   Best Case: **O(n)**   Average Case: **O(n²)**   * Worst Case: **O(n²)**
+
+# Brick Sort / Odd-Even Sort / Parity Sort Notes
+--Brick Sort (also called **Odd-Even Sort** or **Parity Sort**) is a sorting algorithm that works by comparing and swapping adjacent elements in two phases:
+
+* **Odd Phase:** Compare `(1,2), (3,4), (5,6)...`
+* **Even Phase:** Compare `(0,1), (2,3), (4,5)...`
+
+### Steps
+1. Perform the **Odd Phase**.
+2. Perform the **Even Phase**.
+3. Repeat both phases until no swaps occur.
+
+Array: `5 3 8 4 2`
+**Odd Phase:**
+`5 3 8 4 2 → 5 3 4 8 2`
+
+**Even Phase:**
+`5 3 4 8 2 → 3 5 4 8 2`
+Repeat until sorted:
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {5, 3, 8, 4, 2};
+        boolean sorted = false;
+
+        while (!sorted) {
+            sorted = true;
+            // Odd phase
+            for (int i = 1; i < arr.length - 1; i += 2) {
+                if (arr[i] > arr[i + 1]) {
+                    int temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                    sorted = false;
+                }
+            }
+
+            // Even phase
+            for (int i = 0; i < arr.length - 1; i += 2) {
+                if (arr[i] > arr[i + 1]) {
+                    int temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                    sorted = false;
+                }
+            }
+        }
+
+### Time Complexity
+* Best Case: **O(n)**
+* Average Case: **O(n²)**
+* Worst Case: **O(n²)**
