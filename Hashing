@@ -5,194 +5,109 @@ Hashing is a technique that converts a key (data) into a unique code (hash code)
 * Hash Code = Code used to store and find data quickly
 
 **Example:**
-
-```text
 Key = 10
 Hash Function = F(x)
 Hash Code = 111@aba
 ```
-
 Whenever we give `10` to `F(x)`, it always returns the same hash code.
 
----
-
 # Where is Hashing Used?
-
 ### 1. Storing Passwords
-
 When you create an account on apps like Instagram or Gmail, your password is **not stored directly**.
 
 Instead:
-
 * Password → Hash Function → Hash Code
 * Extra security is added using **Salting** and **Peppering**.
 
 This keeps your password safe even if the database is hacked.
-
----
 
 ### 2. Storing Records
 
 In databases, every record has a **Primary Key** (unique ID).
 
 Example:
-
-```text
 Student ID = 101
 Name = Ali
 Age = 22
 ```
-
 Here:
-
 * Key = Student ID (101)
 * Value = Name, Age
 
 The key is converted into a hash code, which points to a memory location. This helps find data very fast (almost **O(1)** time).
 
----
-
+-
 # Types of Hash Functions
-
 ## 1. Division Method
-
 **Formula:**
-
-```text
 Hash = Key % Table Size
-```
 
 Example:
-
-```text
 Table Size = 11
-
 11 % 11 = 0
 10 % 11 = 10
 66 % 11 = 0
-```
-
 Here:
-
 * 11 → Index 0
 * 10 → Index 10
 * 66 → Index 0
-
 Both 11 and 66 go to index 0, causing a collision.
 
----
-
 ## 2. Mid-Square Method
-
 Steps:
-
 1. Square the key.
 2. Take the middle digit(s).
 3. Use it as the index.
-
-Example:
-
-```text
 Key = 11
 11² = 121
 Middle digit = 2
-```
-
 Store data at **index 2**.
-
----
-
-## 3. Folding Method
-
-Steps:
-
-1. Divide the key into smaller parts.
-2. Add or join the parts.
-3. Apply modulo if needed.
-
-Example:
-
-```text
-Key = 123456
-12 + 34 + 56 = 102
-102 % 10 = 2
-```
-
-Store data at **index 2**.
-
----
 
 # Collision
-
 A **collision** happens when **two different keys get the same hash index**.
 
 Example:
-
-```text
 11 % 11 = 0
 66 % 11 = 0
-```
-
 Both want to be stored at index 0.
 
----
-
 # Collision Resolution Techniques
-
 ## A. Closed Hashing
-
 Store data **inside the same hash table**.
 
 ### 1. Linear Probing
-
 If one index is full, check the next index.
-
 Example:
-
-```text
 Index 0 → Full
 Store at Index 1
-```
 
 **Disadvantage:** Creates clustering.
 
----
 
 ### 2. Quadratic Probing
-
 Instead of checking the next index, move using square numbers.
-
 Example:
-
-```text
 +1², +2², +3²...
-```
 
 Reduces primary clustering.
 
----
 
 ### 3. Double Hashing
-
 Uses a **second hash function** to find the next index.
 
 It gives a better distribution and fewer collisions.
 
----
 
 ## B. Open Hashing (Chaining)
 
 Store multiple values at the same index using a **Linked List**.
 
 Example:
-
-```text
 Index 0
 |
 |--> 11 --> 66 --> 99
 ```
 
----
 
 # Probe Number
 
