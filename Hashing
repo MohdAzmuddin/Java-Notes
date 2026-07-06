@@ -8,13 +8,10 @@ Hashing is a technique that converts a key (data) into a unique code (hash code)
 Key = 10
 Hash Function = F(x)
 Hash Code = 111@aba
-```
-Whenever we give `10` to `F(x)`, it always returns the same hash code.
-
+``
 # Where is Hashing Used?
 ### 1. Storing Passwords
 When you create an account on apps like Instagram or Gmail, your password is **not stored directly**.
-
 Instead:
 * Password → Hash Function → Hash Code
 * Extra security is added using **Salting** and **Peppering**.
@@ -81,25 +78,7 @@ Example:
 Index 0 → Full
 Store at Index 1
 
-**Disadvantage:** Creates clustering.
-
-
-### 2. Quadratic Probing
-Instead of checking the next index, move using square numbers.
-Example:
-+1², +2², +3²...
-
-Reduces primary clustering.
-
-
-### 3. Double Hashing
-Uses a **second hash function** to find the next index.
-
-It gives a better distribution and fewer collisions.
-
-
 ## B. Open Hashing (Chaining)
-
 Store multiple values at the same index using a **Linked List**.
 
 Example:
@@ -107,102 +86,73 @@ Index 0
 |
 |--> 11 --> 66 --> 99
 ```
-
-
 # Probe Number
-
 Probe number means **how many attempts are made to find an empty slot** after a collision.
-
-Example:
-
-```text
 Index 0 → Full
 Index 1 → Full
 Index 2 → Empty
 ```
-
 Probe Number = **3**
 
----
-
 # Primary Clustering
-
 Occurs in **Linear Probing**.
-
 Many elements are stored in consecutive positions.
-
 Example:
-
-```text
 0 1 2 3 4
 A B C D
-```
-
 This increases future collisions.
 
----
-
 # Secondary Clustering
-
 Occurs in **Quadratic Probing**.
-
 Different keys follow the same probing pattern and form groups.
-
 It is better than primary clustering but still affects performance.
 
----
-
 # Load Factor (α)
-
 Load Factor tells us **how full the hash table is**.
-
-**Formula:**
-
-```text
+**Formula:*
 Load Factor = Number of Elements / Table Size
-```
 
 Example:
-
-```text
 Elements = 6
 Table Size = 10
 
 Load Factor = 6/10 = 0.6
-```
-
+`
 * Low Load Factor → Fewer collisions, more memory used.
 * High Load Factor → More collisions, slower performance.
 
----
 
 # Rehashing
-
 When the **Load Factor becomes 0.75 or more**, the hash table size is increased (usually doubled).
-
 Then all elements are inserted again into the new table.
 
 Example:
-
-```text
 Old Table Size = 10
 Load Factor = 0.8
 
 New Table Size = 20
-```
 
 This process is called **Rehashing**.
 
----
 
-## Quick Revision
 
-* **Hashing** → Converts a key into a hash code.
-* **Hash Function** → Generates the hash code.
-* **Collision** → Two keys get the same index.
-* **Linear Probing** → Check next index.
-* **Quadratic Probing** → Jump using square numbers.
-* **Double Hashing** → Use another hash function.
-* **Chaining** → Store collided elements in a linked list.
-* **Load Factor** = Elements ÷ Table Size.
-* **Rehashing** → Increase table size when load factor ≥ **0.75**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
